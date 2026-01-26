@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GitHub 每日热门仓库</title>
+  <!-- 关联样式文件（页面美化） -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 页面标题区域 -->
+  <header class="page-header">
+    <h1>GitHub 热门仓库</h1>
+    <p class="subtitle">数据来自 GitHub API</p>
+  </header>
+
+  <!-- 错误提示：仅在加载失败时显示 -->
+  <div id="error" class="error" style="display: none;">
+    数据加载失败，请刷新重试
+  </div>
+
+  <!-- 过滤与说明区域（简化版） -->
+  <section class="filter-bar" aria-label="过滤与说明">
+    <div class="filter-row">
+      <label class="filter-label" for="days-select">时间范围</label>
+      <select id="days-select" class="filter-input">
+        <option value="7" selected>近7日</option>
+        <option value="14">近14日</option>
+        <option value="30">近30日</option>
+        <option value="90">近3月</option>
+      </select>
+
+      <label class="filter-label" for="sort-select">排序依据</label>
+      <select id="sort-select" class="filter-input">
+        <option value="stars" selected>总 Stars</option>
+        <option value="forks">总 Forks</option>
+      </select>
+
+      <span class="period">自动刷新：每5分钟</span>
+      <button id="refresh-btn" class="refresh-btn" type="button">刷新数据</button>
+    </div>
+  </section>
+
+  <!-- （已移除）本仓库功能概览 -->
+
+  <!-- 两个主题分类版块：Productivity & Efficiency、Workflow Automation -->
+  <main aria-live="polite">
+    <div class="two-col">
+      <section class="category-section">
+        <h2 class="section-title">Productivity &amp; Efficiency</h2>
+        <div id="repo-pe" class="repo-list"></div>
+      </section>
+      <section class="category-section">
+        <h2 class="section-title">Workflow Automation</h2>
+        <div id="repo-workflow" class="repo-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 页脚（可选） -->
+  <footer class="page-footer">
+    <small>纯前端示例 · 支持直接部署到 GitHub Pages</small>
+  </footer>
+
+  <!-- 数据请求与渲染的脚本文件 -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  // 固定 Live Server 端口（如被占用可改为 5501/8080）
+  "liveServer.settings.port": 5500,
+  // 指定默认浏览器（Windows 使用新版 Edge：msedge；如需 Chrome 改为 "chrome"）
+  "liveServer.settings.CustomBrowser": "msedge",
+  // 可选：仅允许本机访问
+  "liveServer.settings.host": "127.0.0.1"
+}
