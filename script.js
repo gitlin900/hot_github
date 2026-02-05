@@ -88,6 +88,9 @@ function fetchWeeklyHotRepos() {
       var peRepos = results[0] || [];
       var workflowRepos = results[1] || [];
 
+
+  // 排序并截取 Top N（支持 stars/forks/updated/trending≈）
+
       // 排序并截取 Top N（支持 stars/forks/updated/trending≈）
       var nowMs = Date.now();
       var comparator;
